@@ -63,8 +63,8 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 			else{
 				newArr = realloc(newArr, cont * sizeof(int));	
 			}
-			
-			printf("p = %d", *newArr + cont - 1);
+
+			newArr[cont - 1] = arr[i];
 		}	
 	}
 	
