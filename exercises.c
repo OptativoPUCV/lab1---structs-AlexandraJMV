@@ -70,17 +70,18 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 		}	
 	}
 	
-	// Imprime los elementos del nuevo array
+	/* Imprime los elementos del nuevo array
 	for (int i = 0; i < size; i++){
 		printf("skuaa : %d ", arr[i]);
 	}
 	printf("lol\n");
 	for (int i = 0; i < cont; i++){
 		printf("skuaa : %d ", newArr[i]);
-	}
+	}*/
 	
 	
-	return NULL; }
+	return &newArr[0]; 
+}
 
 /*
 Ejercicio 4: Fusión de dos Arreglos Ordenados
