@@ -74,6 +74,7 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	for (int i = 0; i < cont; i++){
 		printf("skuaa : %d ", arr[i]);
 	}
+	printf("lol\n");
 	for (int i = 0; i < cont; i++){
 		printf("skuaa : %d ", newArr[i]);
 	}
