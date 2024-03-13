@@ -15,3 +15,20 @@ Wed 13 Mar 2024 01:35:29 PM UTC:
  tests:  0|6
 total_score: 10/70
 dcff6e6
+Wed 13 Mar 2024 06:37:48 PM UTC: 
+ exercises.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:36:9: error: this ‘for’ clause does not guard... [-Werror=misleading-indentation]
+   36 |         for (i = 0; i < size / 2; i++)
+      |         ^~~
+exercises.c:38:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   38 |                 arr[i] = arr[aux];
+      |                 ^~~
+exercises.c:39:26: error: ‘temp’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   39 |                 arr[aux] = temp;
+      |                 ~~~~~~~~~^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1d1d033
