@@ -49,7 +49,7 @@ y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
 int * filterEvenNumbers(int arr[], int size, int *newSize) { 
-	/*
+	
 	int cont = 0;
 	int *newArr = NULL;
 
@@ -69,7 +69,13 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 			newArr[cont - 1] = arr[i];
 		}	
 	}
-	*/
+	
+	// Imprime los elementos del nuevo array
+	for (int i = 0; i < cont; i++){
+		printf("%d ", newArr[i]);
+	}
+	
+	
 	return NULL; }
 
 /*
