@@ -106,3 +106,14 @@ Wed 13 Mar 2024 11:57:17 PM UTC:
  tests:  0|5
 total_score: 20/70
 4d3e106
+Wed 13 Mar 2024 11:58:12 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:83:22: error: returning ‘int’ from a function with return type ‘int *’ makes pointer from integer without a cast [-Werror=int-conversion]
+   83 |         return newArr[0];
+      |                ~~~~~~^~~
+cc1: all warnings being treated as errors
+Compilation failed
+9b01bed

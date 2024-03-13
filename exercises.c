@@ -80,7 +80,7 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	}*/
 	
 	
-	return &newArr[0]; 
+	return newArr[0]; 
 }
 
 /*
