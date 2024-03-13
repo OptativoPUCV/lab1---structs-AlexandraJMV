@@ -59,6 +59,8 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 
 			if (newArr == NULL){
 				newArr = (int *) malloc(sizeof(int));
+
+				if (newArr == NULL ) printf("Ke");
 			}
 			else{
 				newArr = realloc(newArr, cont * sizeof(int));	
