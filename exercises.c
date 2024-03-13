@@ -72,6 +72,9 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	
 	// Imprime los elementos del nuevo array
 	for (int i = 0; i < cont; i++){
+		printf("skuaa : %d ", arr[i]);
+	}
+	for (int i = 0; i < cont; i++){
 		printf("skuaa : %d ", newArr[i]);
 	}
 	
