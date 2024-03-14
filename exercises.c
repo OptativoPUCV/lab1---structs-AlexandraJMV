@@ -59,28 +59,24 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 
 			if (newArr == NULL){
 				newArr = (int *) malloc(sizeof(int));
-
-				if (newArr == NULL ) printf("Ke");
+				
+				if (newArr == NULL) {
+					printf("Memory reallocation failed.\n");
+					exit(1); // Exit if memory reallocation fails
+				}
 			}
 			else{
-				newArr = realloc(newArr, cont * sizeof(int));	
-
-				//imprimimos la variable  cont 
-				printf("%d\n", cont );
+				newArr = realloc(newArr, cont * sizeof(int));
+				if (newArr == NULL) {
+					printf("Memory reallocation failed.\n");
+					exit(1); // Exit if memory reallocation fails
+				}
 			}
 
 			newArr[cont - 1] = arr[i];
 		}	
 	}
-	
-	/* Imprime los elementos del nuevo array
-	for (int i = 0; i < size; i++){
-		printf("skuaa : %d ", arr[i]);
-	}
-	printf("lol\n");
-	for (int i = 0; i < cont; i++){
-		printf("skuaa : %d ", newArr[i]);
-	}*/
+
 
 	// Imprime tamaño de newArr
 	printf("Tamaño de newArr: %d\n", cont);
