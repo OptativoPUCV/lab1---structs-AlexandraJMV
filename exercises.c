@@ -105,13 +105,14 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
 					result[j] = arr2[pos2];
 					pos2++;
 				}
+				break;
 			}
 			else{
 				for (int j = i ; j < size1 + size2 ; j++){
 					result[j] = arr1[pos1];
 					pos1++;
 				}
-				
+				break;
 			}
 		}
 	}
