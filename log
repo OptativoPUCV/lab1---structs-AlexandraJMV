@@ -187,3 +187,9 @@ exercises.c:57:38: error: expected ‘;’ before ‘)’ token
 exercises.c:57:38: error: expected statement before ‘)’ token
 Compilation failed
 96f609e
+Thu 14 Mar 2024 12:21:36 AM UTC: 
+ exercises.c | 5 -----
+ 1 file changed, 5 deletions(-)
+ tests:  0|5
+total_score: 20/70
+9fe7d78
