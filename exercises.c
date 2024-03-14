@@ -127,10 +127,10 @@ int checkSorted(int arr[], int size) {
 	for (int i = 0 ; i < size - 1 ; i++){
 
 		if (arr[i+1] < arr[i]){
-			asc = 0
+			asc = 0;
 		}
 		if (arr[i+1] > arr[i]){
-			des = 0
+			des = 0;
 		}
 	}
 
