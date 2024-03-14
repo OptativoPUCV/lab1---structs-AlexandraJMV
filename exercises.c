@@ -77,6 +77,8 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	}
 	*newSize = cont;
 
+	if (newArr == NULL) printf("lol?");
+
 	return newArr; 
 }
 
