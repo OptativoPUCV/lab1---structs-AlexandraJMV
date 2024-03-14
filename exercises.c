@@ -20,7 +20,6 @@ int findMax(int arr[], int size) {
     else if (arr[i] > *mayor)
       mayor = &arr[i];
   return *mayor;
-
 }
 
 /*
@@ -30,16 +29,16 @@ invierta el orden de sus elementos.
 */
 void reverseArray(int arr[], int size) {
 
-	int aux = size - 1;
-	int temp, i;
-	
-	for (i = 0; i < size / 2; i++){
-		temp = arr[i];
-		arr[i] = arr[aux];
-		arr[aux] = temp;
+  int aux = size - 1;
+  int temp, i;
 
-		aux--;
-	}
+  for (i = 0; i < size / 2; i++) {
+    temp = arr[i];
+    arr[i] = arr[aux];
+    arr[aux] = temp;
+
+    aux--;
+  }
 }
 
 /*
@@ -48,33 +47,33 @@ Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
-int * filterEvenNumbers(int arr[], int size, int *newSize) { 
-	
-	int cont = 0;
-	int *newArr = NULL;
+int *filterEvenNumbers(int arr[], int size, int *newSize) {
 
-	newArr = (int *)malloc(size * sizeof(int));
-	if (newArr == NULL) {
-		printf("Memory allocation failed.\n");
-		return NULL;
-	}
+  int cont = 0;
+  int *newArr = NULL;
 
-	for (int i = 0; i < size; i++) {
-		if (arr[i] % 2 == 0) {
-			cont++;
+  newArr = (int *)malloc(size * sizeof(int));
+  if (newArr == NULL) {
+    printf("Memory allocation failed.\n");
+    return NULL;
+  }
 
-			newArr = (int *)realloc(newArr, cont * sizeof(int));
-			if (newArr == NULL) {
-				printf("Memory reallocation failed.\n");
-				free(newArr); 
-				return NULL; 
-			}
-			
-			newArr[cont - 1] = arr[i];
-		}
-	}
-	*newSize = cont;
-	return newArr; 
+  for (int i = 0; i < size; i++) {
+    if (arr[i] % 2 == 0) {
+      cont++;
+
+      newArr = (int *)realloc(newArr, cont * sizeof(int));
+      if (newArr == NULL) {
+        printf("Memory reallocation failed.\n");
+        free(newArr);
+        return NULL;
+      }
+
+      newArr[cont - 1] = arr[i];
+    }
+  }
+  *newSize = cont;
+  return newArr;
 }
 
 /*
@@ -84,38 +83,34 @@ ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) 
-{
-	int pos1 = 0, pos2 = 0; 
-	
-	for (int i = 0 ; i < size1 + size2 ; i++){
-		if (pos1 < size1 && pos2 < size2){
-			if (arr1[pos1] <= arr2[pos2]){
-				result[i] = arr1[pos1];
-				pos1++;
-			}
-			else{
-				result[i] = arr2[pos2];
-				pos2++;
-			}
-		}
-		else{
-			if (pos1 == size1){
-				for (int j = i ; j < size1 + size2 ; j++){
-					result[j] = arr2[pos2];
-					pos2++;
-				}
-				break;
-			}
-			else{
-				for (int j = i ; j < size1 + size2 ; j++){
-					result[j] = arr1[pos1];
-					pos1++;
-				}
-				
-			}
-		}
-	}
+                       int result[]) {
+  int pos1 = 0, pos2 = 0;
+
+  for (int i = 0; i < size1 + size2; i++) {
+    if (pos1 < size1 && pos2 < size2) {
+      if (arr1[pos1] <= arr2[pos2]) {
+        result[i] = arr1[pos1];
+        pos1++;
+      } else {
+        result[i] = arr2[pos2];
+        pos2++;
+      }
+    } else {
+      if (pos1 == size1) {
+        for (int j = i; j < size1 + size2; j++) {
+          result[j] = arr2[pos2];
+          pos2++;
+        }
+        break;
+      } else {
+        for (int j = i; j < size1 + size2; j++) {
+          result[j] = arr1[pos1];
+          pos1++;
+        }
+        break;
+      }
+    }
+  }
 }
 
 /*
