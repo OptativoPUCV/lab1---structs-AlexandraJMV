@@ -78,7 +78,7 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	// Imprime tamaño de newArr
 	printf("Tamaño de newArr: %d\n", cont);
 	
-	return newArr; 
+	return 123; 
 }
 
 /*
