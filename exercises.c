@@ -20,7 +20,6 @@ int findMax(int arr[], int size) {
     else if (arr[i] > *mayor)
       mayor = &arr[i];
   return *mayor;
-
 }
 
 /*
@@ -30,16 +29,16 @@ invierta el orden de sus elementos.
 */
 void reverseArray(int arr[], int size) {
 
-	int aux = size - 1;
-	int temp, i;
-	
-	for (i = 0; i < size / 2; i++){
-		temp = arr[i];
-		arr[i] = arr[aux];
-		arr[aux] = temp;
+  int aux = size - 1;
+  int temp, i;
 
-		aux--;
-	}
+  for (i = 0; i < size / 2; i++) {
+    temp = arr[i];
+    arr[i] = arr[aux];
+    arr[aux] = temp;
+
+    aux--;
+  }
 }
 
 /*
@@ -48,23 +47,21 @@ Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
-int *filterEvenNumbers(int arr[], int size, int *newSize) { 
+int *filterEvenNumbers(int arr[], int size, int *newSize) {
 
   int *newArr = NULL;
   *newSize = 0;
 
   for (size_t i = 0; i < size; i++) {
 
-	if (arr[i] % 2 == 0) {
-	  newArr = (int *) realloc(newArr, (*newSize + 1) * sizeof(int));
-	  newArr[*newSize] = arr[i];
-	  (*newSize)++;
-
-	}
+    if (arr[i] % 2 == 0) {
+      newArr = (int *)realloc(newArr, (*newSize + 1) * sizeof(int));
+      newArr[*newSize] = arr[i];
+      (*newSize)++;
+    }
   }
 
   return newArr;
-
 }
 
 /*
@@ -74,20 +71,18 @@ ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) 
-{
-	int pos1 = 0, pos2 = 0; 
-	
-	for (int i = 0 ; i < size1 + size2 ; i++){
-		if (arr1[pos1] <= arr2[pos2]){
-			result[i] = arr1[pos1];
-			pos1++;
-		}
-		else{
-			result[i] = arr2[pos2];
-			pos2++;
-		}
-	}
+                       int result[]) {
+  int pos1 = 0, pos2 = 0;
+
+  for (int i = 0; i < size1 + size2; i++) {
+    if (arr1[pos1] <= arr2[pos2]) {
+      result[i] = arr1[pos1];
+      pos1++;
+    } else {
+      result[i] = arr2[pos2];
+      pos2++;
+    }
+  }
 }
 
 /*
