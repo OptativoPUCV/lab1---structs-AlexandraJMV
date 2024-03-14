@@ -123,7 +123,6 @@ int checkSorted(int arr[], int size) {
 
 	int asc = 1, des = 1;
 	
-	
 	for (int i = 0 ; i < size - 1 ; i++){
 
 		if (arr[i+1] < arr[i]){
@@ -134,7 +133,6 @@ int checkSorted(int arr[], int size) {
 		}
 	}
 
-
 	if (asc == 1){
 		return 1;
 	}
@@ -144,7 +142,7 @@ int checkSorted(int arr[], int size) {
 	else{
 		return 0;
 	}
-	}
+}
 
 /*
 Ejercicio 6: Información de una Biblioteca
@@ -166,7 +164,16 @@ typedef struct {
 } Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion) {}
+                      int anioNacimiento, int anioPublicacion) {
+
+	Autor *autor = (Autor*) malloc(sizeof(Autor));
+	autor->anioNacimiento = anioNacimiento;
+	strcpy(autor->nombre, nombreAutor);
+
+	libro->anioPublicacion = anioPublicacion;
+	libro->autor = *autor;
+	strcpy(libro->titulo, titulo);
+}
 
 /*
 Ejercicio 7: Lista enlazada de números
