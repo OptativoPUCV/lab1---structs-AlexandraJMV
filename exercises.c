@@ -66,7 +66,7 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 				}
 			}
 			else{
-				newArr = realloc(newArr, cont * sizeof(int));
+				newArr = (int *) realloc(newArr, cont * sizeof(int));
 				if (newArr == NULL) {
 					printf("Memory reallocation failed.\n");
 					exit(1); // Exit if memory reallocation fails
