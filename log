@@ -390,3 +390,9 @@ exercises.c:196:15: error: variable ‘cabeza’ set but not used [-Werror=unuse
 cc1: all warnings being treated as errors
 Compilation failed
 eedd751
+Thu 14 Mar 2024 12:54:49 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|1
+total_score: 60/70
+0d9b86c
