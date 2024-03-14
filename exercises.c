@@ -52,6 +52,7 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	
 	int cont = 0;
 	int *newArr = NULL;
+	int 
 
 	for (int i = 0; i < size; i++){
 		if (arr[i] % 2 == 0){
@@ -73,6 +74,7 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 			newArr[cont++] = arr[i];
 		}	
 	}
+	*newSize = cont;
 
 
 	// Imprime tamaño de newArr
