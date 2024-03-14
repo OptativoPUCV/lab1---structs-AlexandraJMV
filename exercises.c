@@ -53,19 +53,15 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	int cont = 0;
 	int *newArr = NULL;
 
-
+	newArr = (int *)malloc(size * sizeof(int));
+	if (newArr == NULL) {
+		printf("Memory allocation failed.\n");
+		return NULL;
+	}
 
 	for (int i = 0; i < size; i++) {
 		if (arr[i] % 2 == 0) {
 			cont++;
-
-			if (newArr == NULL){
-				newArr = (int *)malloc(size * sizeof(int));
-				if (newArr == NULL) {
-					printf("Memory allocation failed.\n");
-					return NULL;
-				}
-			}
 
 			int *temp = (int *)realloc(newArr, cont * sizeof(int));
 			if (temp == NULL) {
