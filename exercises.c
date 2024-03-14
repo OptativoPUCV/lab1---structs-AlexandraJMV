@@ -63,13 +63,13 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 		if (arr[i] % 2 == 0) {
 			cont++;
 
-			int *temp = (int *)realloc(newArr, cont * sizeof(int));
-			if (temp == NULL) {
+			newArr = (int *)realloc(newArr, cont * sizeof(int));
+			if (newArr == NULL) {
 				printf("Memory reallocation failed.\n");
 				free(newArr); 
 				return NULL; 
 			}
-			newArr = temp;
+			
 			newArr[cont - 1] = arr[i];
 		}
 	}
