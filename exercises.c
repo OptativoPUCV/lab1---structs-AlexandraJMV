@@ -201,11 +201,13 @@ Nodo *crearListaEnlazada(int arr[], int size) {
 		if (i == 0){
 			cabeza = nuevoNodo;
 		}
+		else{
+			prev->siguiente = nuevoNodo;
+		}
 
 		nuevoNodo->numero = arr[i];
 		nuevoNodo->siguiente = NULL;
 
-		prev->siguiente = nuevoNodo;
 		prev = nuevoNodo;
 	}
 
