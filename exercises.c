@@ -78,9 +78,11 @@ int * filterEvenNumbers(int arr[], int size, int *newSize) {
 	for (int i = 0; i < cont; i++){
 		printf("skuaa : %d ", newArr[i]);
 	}*/
+
+	// Imprime tamaño de newArr
+	printf("Tamaño de newArr: %d\n", cont);
 	
-	
-	return newArr; 
+	return (newArr); 
 }
 
 /*
