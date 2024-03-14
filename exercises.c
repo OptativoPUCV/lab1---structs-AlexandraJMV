@@ -48,33 +48,23 @@ Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
-int * filterEvenNumbers(int arr[], int size, int *newSize) { 
-	
-	int cont = 0;
-	int *newArr = NULL;
+int *filterEvenNumbers(int arr[], int size, int *newSize) { 
 
-	newArr = (int *)malloc(size * sizeof(int));
-	if (newArr == NULL) {
-		printf("Memory allocation failed.\n");
-		return NULL;
+  int *newArr = NULL;
+  *newSize = 0;
+
+  for (size_t i = 0; i < size; i++) {
+
+	if (arr[i] % 2 == 0) {
+	  newArr = (int *) realloc(newArr, (*newSize + 1) * sizeof(int));
+	  newArr[*newSize] = arr[i];
+	  (*newSize)++;
+
 	}
+  }
 
-	for (int i = 0; i < size; i++) {
-		if (arr[i] % 2 == 0) {
-			cont++;
+  return newArr;
 
-			newArr = (int *)realloc(newArr, cont * sizeof(int));
-			if (newArr == NULL) {
-				printf("Memory reallocation failed.\n");
-				free(newArr); 
-				return NULL; 
-			}
-			
-			newArr[cont - 1] = arr[i];
-		}
-	}
-	*newSize = cont;
-	return newArr; 
 }
 
 /*
@@ -86,7 +76,6 @@ arreglos en un tercer arreglo también ordenado.
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
                        int result[]) 
 {
-
 	int pos1 = 0, pos2 = 0; 
 	
 	for (int i = 0 ; i < size1 + size2 ; i++){
